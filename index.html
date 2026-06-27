@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOBAL TENDENCE FESTIVAL</title>
+    <style>
+        :root {
+            --bg-color: #0B0B0C;
+            --text-color: #E4E4E7;
+            --accent-gold: #FFD700;
+            --neon-cyan: #00F0FF;
+            --neon-green: #39FF14;
+            --card-bg: #141416;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.7;
+            padding: 20px;
+            font-size: 19px; 
+        }
+        .container { max-width: 930px; margin: 0 auto; padding: 40px 20px; }
+        
+        .video-box {
+            width: 100%;
+            height: 480px;
+            background: #000;
+            margin: 35px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #222;
+        }
+        .video-box iframe { width: 100%; height: 100%; border: none; }
+
+        .tag-top { font-size: 15px; letter-spacing: 4px; color: #A1A1AA; margin-bottom: 12px; font-weight: bold; }
+        .sub-manifesto { color: var(--neon-green); font-size: 16px; letter-spacing: 3px; font-weight: 800; text-transform: uppercase; margin-bottom: 5px; display: block; }
+        .sub-cardine { color: var(--neon-cyan); font-size: 16px; letter-spacing: 3px; font-weight: 800; text-transform: uppercase; margin-bottom: 5px; display: block; }
+        
+        h1 { font-size: 56px; font-weight: 900; letter-spacing: -1.5px; margin-bottom: 25px; color: #FFF; line-height: 1.1; }
+        h2 { font-size: 38px; color: #FFF; margin-bottom: 25px; font-weight: 800; border-left: 4px solid var(--neon-cyan); padding-left: 15px; margin-top: 45px; }
+        h3 { font-size: 24px; color: #FFF; margin-top: 30px; margin-bottom: 15px; font-weight: 700; }
+        h4 { font-size: 18px; color: var(--accent-gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+        
+        p { margin-bottom: 25px; color: #D4D4D8; }
+        ul { margin-left: 30px; margin-bottom: 30px; color: #A1A1AA; }
+        li { margin-bottom: 10px; }
+        
+        .gold-highlight { color: var(--accent-gold); font-weight: 800; }
+        .cyan-highlight { color: var(--neon-cyan); font-weight: 700; }
+        .green-highlight { color: var(--neon-green); font-weight: 800; }
+        .white-highlight { color: #FFF; font-weight: 700; }
+        .salerno-faro { color: var(--accent-gold); font-weight: 900; text-decoration: underline; }
+        
+        blockquote {
+            border-left: 4px solid var(--neon-cyan);
+            padding: 20px 25px;
+            margin: 35px 0;
+            font-size: 22px;
+            color: #F4F4F5;
+            background: #111113;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .divider { border-bottom: 2px solid #222; margin: 50px 0; }
+        .stacco { margin-top: 30px; }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin: 35px 0; }
+        .card-neon { background: var(--card-bg); border: 1px solid var(--neon-cyan); padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,240,255,0.05); }
+        .card-neon h3 { color: var(--neon-cyan); margin-top: 0; margin-bottom: 12px; font-size: 22px; }
+
+        .btn { display: inline-block; padding: 15px 30px; font-size: 17px; font-weight: 700; text-decoration: none; border-radius: 8px; cursor: pointer; margin-top: 15px; border: none; text-align: center; }
+        .btn-cyan { background: var(--neon-cyan); color: #000; }
+        .btn-outline { border: 2px solid var(--neon-cyan); color: var(--neon-cyan); margin-left: 15px; background: transparent; }
+
+        .gtf-box-final {
+            background: #16161A;
+            border: 1px dashed var(--accent-gold);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .gtf-box-final p {
+            color: var(--accent-gold);
+            font-size: 23px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* STRUTTURE COMPLEMENTARI */
+        .city-module {
+            background: var(--card-bg);
+            border: 1px solid #27272A;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        .reward-vertical-stack { display: flex; flex-direction: column; gap: 25px; margin: 40px 0; }
+        .reward-rectangle { 
+            background: var(--card-bg); 
+            border: 1px solid #27272A; 
+            padding: 35px; 
+            border-radius: 12px;
+            width: 100%;
+        }
+        .reward-price { font-size: 42px; font-weight: 900; color: #FFF; margin-bottom: 10px; }
+        .reward-rectangle.featured { 
+            border: 2px solid var(--neon-cyan); 
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+        }
+        .reward-rectangle.isolated-gold { 
+            border: 2px solid var(--accent-gold); 
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+        }
+        .btn-paypal { display: block; width: 100%; max-width: 400px; background: #FFF; color: #000; font-weight: bold; border: none; padding: 15px; border-radius: 8px; cursor: pointer; text-align: center; margin-top: 15px; }
+        .btn-gold { display: block; width: 100%; max-width: 400px; background: var(--accent-gold); color: #000; font-weight: bold; border: none; padding: 15px; border-radius: 8px; cursor: pointer; text-align: center; margin-top: 15px; }
+        .macro-fund { 
+            background: #16161A; 
+            border: 2px dashed var(--accent-gold); 
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+            padding: 40px; 
+            border-radius: 12px; 
+            margin: 50px 0; 
+        }
+        footer { margin-top: 60px; border-top: 1px solid #222; padding-top: 40px; font-size: 16px; color: #A1A1AA; }
+        footer p { font-size: 16px; margin-bottom: 20px; line-height: 1.6; }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            border-top: 1px dashed #333;
+            padding-top: 25px;
+            font-size: 15px;
+        }
+        .footer-grid-item { color: #A1A1AA; line-height: 1.5; }
+        .footer-grid-item strong { color: #FFF; display: block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- VIDEO 1: APERTURA IN LOOP -->
+    <div class="video-box">
+        <iframe src="https://drive.google.com/file/d/1m2wpvNY69kyojhuOgO4n9aU8K1biW-mR/preview" allow="autoplay"></iframe>
+    </div>
+
+    <div class="tag-top">GLOBAL TREND FORUM®</div>
+    <h1>L'UOMO AL CENTRO</h1>
+    
+    <p><strong>Global Trend Forum®</strong> — Il Think Tank geopolitico e culturale nato per governare l'esponenzialità del digitale. Questo portale è la voce ufficiale del Global Trend Forum®. Da qui prende terra un'<span class="gold-highlight">avanguardia etica internazionale</span>: una visione che mette il <span class="white-highlight">talento umano</span>, la <span class="white-highlight">libertà di espressione</span> e il <span class="white-highlight">valore dell'individuo</span> al centro del progresso tecnologico.</p>
+    
+    <a href="#" class="btn btn-cyan">Unisciti alla mobilitazione</a>
+    <a href="#" class="btn btn-outline">Leggi il Manifesto</a>
+
+    <div class="divider"></div>
+
+    <!-- SOTTOTITOLO MANIFESTO ETICO -->
+    <span class="sub-manifesto">Manifesto Etico</span>
+    <h2>LA VISIONE</h2>
+    <blockquote>
+        "L'Intelligenza Artificiale non nasce per sostituire l'individuo, ma come acceleratore tecnologico per <strong>amplificare il talento umano</strong> e la libertà di espressione. In questa transizione epocale, <span class="salerno-faro">SALERNO si consacra capitale e hub globale</span> di una nuova Evoluzione Umana Integrale, dove la tecnologia è al totale servizio dell'Uomo."
+    </blockquote>
+
+    <!-- VIDEO 2: MANIFESTO VISIVO -->
+    <div class="video-box">
+        <iframe src="https://drive.google.com/file/d/1qZPb1C-iACH6zHJE63XETbzzQaN7i2in/preview"></iframe>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>AMPLIFICAZIONE E CIVILTÀ DI TIPO 1</h2>
+    <div class="grid-3">
+        <div class="card-neon">
+            <h3>Amplificare, non sostituire</h3>
+            <p>"La tecnologia al servizio del talento umano: ogni strumento potenzia la persona, non la sostituisce."</p>
+        </div>
+        <div class="card-neon">
+            <h3>Libertà di espressione</h3>
+            <p>"Sosteniamo la voice dell'individuo come valore assoluto da espandere nell'era dell'automazione."</p>
+        </div>
+        <div class="card-neon">
+            <h3>Salerno capitale etica</h3>
+            <p>"Un hub internazionale dove l'evoluzione umana applicata all'AI diventa cultura, metodo e azione scientifica."</p>
+        </div>
+    </div>
+
+    <blockquote style="border-left-color: var(--accent-gold); background: #141310;">
+        <span class="gold-highlight">"La tecnologia serve a portare l'Umano oltre: esalta l'individualità autentica al di sopra di ogni conflitto, liberandone il pieno potenziale e proiettandolo verso una civiltà di tipo 1."</span>
+    </blockquote>
+
+    <div class="divider"></div>
+
+    <h2>IL MANDATO – I TRE PILASTRI FONDAMENTALI</h2>
+    
+    <h3>Pilastro I — Il Cuore Evolutivo — L'Uomo Integrale</h3>
+    <p>"Fine dell'era del timore tecnologico. Usiamo l'AI come specchio e potenziamento dell'individuo, centro di gravità del sistema. <span class="cyan-highlight">TECNOLOGIA COME ESTENSIONE</span>"</p>
+
+    <h3>Pilastro II — La Diplomazia della Convergenza — La Geopolitica dei Blocchi</h3>
+    <p>"<span class="salerno-faro">SALERNO</span> è l'unico Terreno Neutrale al mondo dove <span class="white-highlight">G7, BRICS e oltre</span> convergono non per negoziare conflitti, ma per definire la Civiltà di Tipo 1. <span class="cyan-highlight">CONVERGENZA SENZA CONFLITTO</span>"</p>
+
+    <h3>Pilastro III — La Sintesi Non-Duale — L'Algoretica Universale</h3>
+    <p>"La tecnologia ha bisogno di un'anima. Un ponte morale incrollabile che integra l'algoretica del Pontefice con la visione olistica del buddismo e delle tradizioni mondiali. <span class="cyan-highlight">ETICA UNIVERSALE</span>"</p>
+
+    <div class="divider"></div>
+
+    <!-- SOTTOTITOLO IL PRINCIPIO CARDINE -->
+    <span class="sub-cardine">Il Principio Cardine</span>
+    <h2>L'ARCHITETTURA DELL'INTERSEZIONE</h2>
+    <p>I flussi delle grandi visioni globali e dei trend internationalen (Macro) si intersecano con l'energia vitale, l'autenticità e l'azione culturale delle comunità (Micro). In questo scenario, <span class="salerno-faro">SALERNO si configura come la prima Città-Modello e il catalizzatore globale: la “Svizzera delle convergenze”</span>, il primo laboratorio al mondo per l'umanizzazione e la democratizzazione dell'Intelligenza Artificiale, concepito come una prima fioritura planetaria e un acceleratore strategico per la transizione verso una <span class="gold-highlight">Civiltà di Tipo 1</span>.</p>
+
+    <p><strong>Sintesi Verticale (Macro):</strong> La connessione diretta tra le grandi correnti di pensiero globali e l'economia reale dei territori. Il Forum diventa un ecosistema di contaminazione totale e il punto di contatto universale in cui le avanguardie scientifiche, i pensatori illuminati, i representatives industriali e delle grandi fedi mondiali (dall'Occidente al Buddismo) del <span class="gold-highlight">G7 e dei paesi BRICS</span> convergono oltre ogni logica duale. Uno spazio puro, focalizzato sulla scienza, sulla filosofia e sul superamento dei conflitti per la scrittura di un codice sorgente comune.</p>
+    
+    <p><strong>Flusso Circolare (Micro):</strong> I canoni dell'innovazione tecnologica e della conoscenza scendono a terra attraverso un'interazione totale, transforming il territorio nel primo incubatore del Nuovo Umanesimo. Contemporaneamente, la spinta partecipativa e l'autenticità dei cittadini risalgono verso l'alto, ridefinendo le tendenze globali e <span class="green-highlight">trasformando il sostenitore in un co-creatore del futuro.</span></p>
+
+    <!-- BOX AD ALTO IMPATTO ORO -->
+    <div class="gtf-box-final">
+        <p>"Global Trend Forum®: Una piattaforma per un'avanguardia etica internazionale: talenti, comunità e visioni convergono in un ecosistema di azione culturale."</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- LOGISTICA INDUSTRIALE -->
+    <h2>IL FRAMEWORK INDUSTRIALE – LE TRE CITTÀ OPERATIVE</h2>
+    <p style="font-style: italic; color: #FFF;">SALERNO si trasforma in un ecosistema tridimensionale dove etica, esperienza e osservazione scientifica convergono.</p>
+    
+    <div class="city-module">
+        <p><strong>1. CITY 01 · HEADQUARTERS — The Founding City (La Città Fondativa):</strong> "Il quartier generale, il codice sorgente del framework etico, dove nasce la Delibera Popolare per l'AI Etica e si firmano i protocolli geopolitici. Protocolli etici | Delibera Popolare | Governance globale"</p>
+    </div>
+
+    <div class="city-module">
+        <p><strong>2. CITY 02 · HARDWARE TERRITORIALE — The Experiencing City (La Città dell'Esperienza):</strong> "Lo spazio tridimensionale in cui i linguaggi dell'arte, della cultura e dell'innovazione convergono a terra, trasformando il contesto urbano di SALERNO in un laboratorio vivente di interazione etica e consapevole."</p>
+    </div>
+
+    <div class="city-module">
+        <p><strong>3. CITY 03 · OBSERVATORY — The Observing City (La Città dell'Osservatorio):</strong> "Il radar scientifico, tecnologico e filosofico del Forum. Una stazione concettuale connessa direttamente con la <strong>Frontiera Spaziale e i sistemi di AI evolutiva di ultima generazione</strong>. Qui si analizza l'avanzamento tecnologico globale e si traccia la rotta dell'evoluzione umana verso l'esterno, armonizzando le grandi visioni della civiltà multiplanetaria con l'algoretica terrestre. Frontiera Spaziale & Civiltà Multiplanetaria | AI Evolutiva di Ultima Generazione | Algoretica Terrestre"</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>METAVERSO FISICO & GOVERNANCE</h2>
+    <p>"Un Metaverso Fisico in cui la ricerca scientifica avanzata, la cultura e i grandi brand si fondono per produrre il codice sorgente delle tendenze future. <span class="cyan-highlight">La città di SALERNO diventa intera interfaccia e faro del nuovo umanesimo.</span>"</p>
+    <ul style="margin-left: 20px; margin-bottom: 20px; color: #A1A1AA;">
+        <li>Modello di Governance Etica dell'AI.</li>
+        <li>Integrazione dei Sistemi e Interoperabilità.</li>
+        <li>Sicurezza dei Dati e Privacy (Sovranità del dato).</li>
+        <li>Sviluppo di Ecosistemi di Valore (Impatto sul lungo periodo).</li>
+    </ul>
+
+    <div class="divider"></div>
+
+    <h2>GLOBAL TENDENCE FESTIVAL® – EDIZIONE ZERO 2030</h2>
+    <p><strong>GLOBAL TENDENCE FESTIVAL (L'Anima):</strong> "Il Festival e la Fiera si configurano come i due motori performanti e gli strumenti attuativi centrali del framework. Non due elementi separati, ma un'unica grande infrastruttura capace di generare e mettere in atto i nuovi paradigmi di mercato. Attraverso la convergenza di cultura, economia reale e innovazione, essi diventano il veicolo concreto per la transizione verso un Nuovo Umanesimo e l'accelerazione strategica verso la <strong>CIVILTÀ DI TIPO 1</strong>."</p>
+    
+    <p><strong>Fiera Internazionale (Il Polmone):</strong> "Lo spazio commerciale e di brand identity per imprese e istituzioni. Il luogo dove innovazione e business si incontrano per costruire il futuro dell'economia etica."</p>
+
+    <p><strong>I Distretti di SALERNO:</strong> "La mobilitazione territoriale per la Delibera Popolare per l'AI Etica e la Tutela del Commercio Locale."</p>
+    
+    <div class="stacco"></div>
+    <p style="font-size: 20px; font-weight: bold; color: #FFF;">"Il tessuto commerciale locale non subisce il festival, lo esegue."</p>
+
+    <div class="divider"></div>
+
+    <h2>INTEGRATIVE CROWDFUNDING & VALORE DELL'AUTENTICITÀ</h2>
+    <p>"Questa campagna di mobilitazione economica rappresenta una funzione parallela di partecipazione democratica. Il funding è integrativo rispetto alle attività ed evoluzioni industriali già in essere offline del Global Trend Forum®. Serve a validare la visione etica e la Delibera Popolare, garantendo l'indipendenza dell'individuo nell'Ecosistema e la creazione di una community critica e consapevole."</p>
+    
+    <div class="stacco"></div>
+    <p style="font-size: 20px; font-weight: bold; color: #FFF;">"Il Global Trend Forum® è uno spazio totalmente indipendente e privo di condizionamenti. Proteggiamo la libertà di espressione e la centralità dell'individuo."</p>
+
+    <div class="divider"></div>
+
+    <h4>05 — SOSTIENI L'AUTENTICITÀ DELL'UMANO</h4>
+    <h1 style="font-size: 38px;">Il Valore dell'Autenticità: Finanzia l'Evoluzione Umana</h1>
+
+    <p><strong>I Citizens of the World — Dalla convergenza strategica tra le avanguardie del G7, la frontiera dei Paesi BRICS e dell'Estremo Oriente, fino alla mobilitazione globale:</strong> Quando l'umanità si unisce, la tecnologia torna a essere uno strumento di amplificazione del talento. Sostieni il Think Tank con un contributo libero (€5, €20, €50). Il supporto di migliaia di cittadini garantisce che la ricerca, la cultura e il codice sorgente del domani rimangano puri, etici e orientati all'espressione della vera individualità.</p>
+
+    <h2 style="font-size: 20px; margin-top: 30px;">FINANZIA LO SVILUPPO DEL PRIMO FRAMEWORK ETICO E MODELLO DI CITTÀ PER L'UMANIZZAZIONE E DEMOCRATIZZAZIONE DELL'AI</h2>
+    <p style="color: var(--neon-cyan);"><em>(57% Raggiunto | 1.287 Sostenitori | 142.5k Euro Raccolti | Target: €250.000 / mese)</em></p>
+
+    <!-- STRUTTURA REWARD -->
+    <div class="reward-vertical-stack">
+        
+        <!-- BOX 5 EURO -->
+        <div class="reward-rectangle">
+            <div class="reward-price">€5</div>
+            <h3>SOSTENITORE / SUPPORTER</h3>
+            <p><strong>ITA/ENG:</strong> Attestato Digitale di Custode Etico + Inserimento ufficiale nel registro globale dei *Citizens of the World* per l'Autenticità. / *Digital Certificate of Ethical Custodian + Official inclusion in the global registry of Citizens of the World for Authenticity.*</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="carloriccioevents@gmail.com">
+                <input type="hidden" name="item_name" value="Sostenitore Supporter - Global Trend Forum">
+                <input type="hidden" name="amount" value="5.00">
+                <input type="hidden" name="currency_code" value="EUR">
+                <button type="submit" class="btn-paypal">CONTRIBUISCI €5 CON PAYPAL</button>
+            </form>
+        </div>
+
+        <!-- BOX 20 EURO -->
+        <div class="reward-rectangle">
+            <div class="reward-price">€20</div>
+            <h3>PATRON / PATRON</h3>
+            <p><strong>ITA/ENG:</strong> Tutti i vantaggi precedenti + Badge Digitale di "Sostenitore Attivo" e menzione speciale nei *Contributors* del sito ufficiale. / *All previous benefits + Digital "Active Supporter" Badge + Special mention in the website's Contributors section.*</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="carloriccioevents@gmail.com">
+                <input type="hidden" name="item_name" value="Patron - Global Trend Forum">
+                <input type="hidden" name="amount" value="20.00">
+                <input type="hidden" name="currency_code" value="EUR">
+                <button type="submit" class="btn-paypal">CONTRIBUISCI €20 CON PAYPAL</button>
+            </form>
+        </div>
+
+        <!-- BOX 50 EURO -->
+        <div class="reward-rectangle featured">
+            <div class="reward-price" style="color: var(--neon-cyan)">€50</div>
+            <h3>CUSTODE DELL'AVANGUARDIA / AVANT-GARDE GUARDIAN</h3>
+            <p><strong>ITA:</strong> <em>Posizionamento d'Élite Territoriale.</em> Rilascio del Badge Digitale di Membro dell'Avanguardia Etica + Inserimento prioritario nel comitato di validazione della Delibera Popolare per l'AI Etica di Salerno. Include il diritto di prelazione assoluto sulla futura prenotazione dei pass fisici per l'Ecosystem.</p>
+            <p><strong>ENG:</strong> <em>Elite Territorial Positioning.</em> Issuance of the Ethical Avant-Garde Member Digital Badge + Priority inclusion in the validation committee for the Popular Resolution for Ethical AI in Salerno. Includes absolute priority rights for future physical pass reservations for the Ecosystem.</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="carloriccioevents@gmail.com">
+                <input type="hidden" name="item_name" value="Custode dell Avanguardia - Global Trend Forum">
+                <input type="hidden" name="amount" value="50.00">
+                <input type="hidden" name="currency_code" value="EUR">
+                <button type="submit" class="btn-paypal" style="background: var(--neon-cyan);">CONTRIBUISCI €50 CON PAYPAL</button>
+            </form>
+        </div>
+
+        <!-- BOX 500 EURO -->
+        <div class="reward-rectangle isolated-gold">
+            <div class="reward-price" style="color: var(--accent-gold)">€500</div>
+            <h3 style="color: var(--accent-gold)">CERTIFICATO FONDATIVO INTERNAZIONALE / INTERNATIONAL FOUNDING CERTIFICATE</h3>
+            <p><strong>ITA:</strong> <em>Posizionamento ad Alta Fedeltà Etica.</em> Rilascio del Diploma d'Onore Numerato e Registrato di "Sostenitore Internazionale della Civiltà di Tipo 1". Il nominativo viene impresso per sempre nel Registro dei Fondatori dell'Ecosistema Etico a tutela della trasparenza globale. Accesso prioritario assoluto alle future relazioni istituzionali del Forum.</p>
+            <p><strong>ENG:</strong> <em>High-Fidelity Ethical Positioning.</em> Issuance of the Numbered and Registered Diploma of Honor as an "International Supporter of Type 1 Civilization". The name will be permanently inscribed in the Registry of Founders of the Ethical Ecosystem to safeguard global transparency. Absolute priority access to the Forum's future institutional relations.</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="carloriccioevents@gmail.com">
+                <input type="hidden" name="item_name" value="Certificato Fondativo Internazionale - Global Trend Forum">
+                <input type="hidden" name="amount" value="500.00">
+                <input type="hidden" name="currency_code" value="EUR">
+                <button type="submit" class="btn-gold">CONTRIBUISCI €500 CON PAYPAL</button>
+            </form>
+        </div>
+
+        <!-- BOX 50.000 EURO -->
+        <div class="reward-rectangle">
+            <div class="reward-price">€50.000</div>
+            <h3>GOVERNANCE DI COMPARTO CONDIVISA / SHARED SECTOR GOVERNANCE</h3>
+            <p><strong>ITA:</strong> Corsia riservata agli investitori e partner strategici. Governance di Comparto Condivisa – Seggio nel tavolo strategico | Brand Identity – Posizionamento di primo piano | Accesso istituzionale – Relazioni e network esclusivo.</p>
+            <p><strong>ENG:</strong> Reserved for investors and strategic partners. Shared Sector Governance – Seat at the strategic table | Brand Identity – High-profile positioning | Institutional Access – Exclusive network and relations.</p>
+            <a href="mailto:goevents.aps@pec.it?subject=Executive%20Governance%20Reservation" class="btn btn-outline" style="width: 100%; max-width: 100%; margin-left: 0; display: block;">AREA RISERVATA EXECUTIVE</a>
+        </div>
+
+    </div>
+
+    <p style="font-size: 14px; text-align: center; color: #71717A; font-style: italic;">
+        "Ogni contributo è una donazione libera a sostegno dell'indipendenza scientifica e culturale del Global Trend Forum®. I riconoscimenti, gli attestati e i diritti di accesso d'élite concessi ai sostenitori rimangono legati allo sviluppo del framework e saranno garantiti per la prima manifestatione ufficiale dell'Ecosystem, ovunque e in qualsiasi momento essa prenderà terra."
+    </p>
+
+    <!-- BOX PARTNER ISTITUZIONALE -->
+    <div class="macro-fund">
+        <h2 style="color: var(--accent-gold); font-size: 26px; margin-bottom: 15px; font-weight: 800;">IMPRESE, ISTITUZIONI E MECENATI</h2>
+        <p style="color: #FFF; font-size: 17px;">"Dedicato a realtà aziendali, fondazioni e investitori illuminati che scelgono di <span class="gold-highlight">associare il proprio nome alla più grande transizione etica del secolo</span>. Finanzia lo sviluppo dei distretti tecnologici ed esperienziali a terra e i protocolli di algoretica internazionale."</p>
+        <a href="mailto:goevents.aps@pec.it?subject=Richiesta%20Macro%20Fundraising%20-%20Global%20Trend%20Forum" class="btn btn-gold" style="display: inline-block; width: auto; padding: 12px 40px; margin-top: 10px;">DIVENTA PARTNER ISTITUZIONALE</a>
+    </div>
+
+    <div class="stacco"></div>
+
+    <!-- FRASE MONUMENTALE -->
+    <h1 style="font-size: 40px; text-align: center; line-height: 1.3; margin: 60px 0; font-weight: 900;">
+        “Chi finanzia il Global Trend Forum® non si sta difendendo dal futuro: sta rivendicando il diritto di guidarlo con la forza della propria autenticità.”
+    </h1>
+
+    <!-- DIREZIONE STRATEGICA E INFORMAZIONI LEGALI -->
+    <footer>
+        <p><strong>Direzione Strategica:</strong> Ideato e coordinato dal Founder del framework globale dell'Ecosistema[span_0](start_span)[span_0](end_span). Una regia strategica nata per guidare la transizione tra tecnologia e umanesimo etico, coordinando i distretti territoriali e i tavoli di governance internazionale, garantendo la continuità e lo sviluppo del codice[span_1](start_span)[span_1](end_span).</p>
+        
+        <p><strong>La Matrice Ufficiale:</strong> Global Trend Forum® (Framework Concettuale e Tavoli Internazionali) & GLOBAL TENDENCE FESTIVAL® (Ecosistema di Messa a Terra) — L'Uomo al Centro — Direzione Strategica: Carlo Riccio — GO Events APS — Associazione Culturale Internazionale per la Promozione Territoriale e la Creazione di Valore[span_2](start_span)[span_2](end_span).</p>
+        
+        <p><strong>Trasparenza dei Fondi:</strong> Ogni entrata e uscita dello Start Funding e delle libere donazioni è rendicontata pubblicamente[span_3](start_span)[span_3](end_span). I fondi sono vincolati rigorosamente allo sviluppo del framework e alle relazioni internazionali dell'ecosistema[span_4](start_span)[span_4](end_span).</p>
+        
+        <blockquote style="font-size: 13px; margin: 20px 0; border-left-color: #444; color: #888;">
+            <strong>Dichiarazione Legale:</strong> La paternità intellettuale, l'ideazione e il framework concettuale del format appartengono interamente al Fondatore e Presidente Carlo Riccio come persona fisica[span_5](start_span)[span_5](end_span). La GO Events APS <strong>"è l'organizzazione no-profit di raccordo territoriale che ne preserva la matrice etica"</strong>[span_6](start_span)[span_6](end_span). Ogni utilizzo, replica o deposito non autorizzato, anche parziale, del brand, del framework concettuale, della metodologia di interazione e delle dinamiche progettuali correlate è perseguibile a norma di legge, in quanto l'opera è protetta a livello internazionale dal diritto d'autore in tutte le sedi istituzionali e giurisdizionali competenti[span_7](start_span)[span_7](end_span).
+        </blockquote>
+
+        <!-- GRID RIGIDA FINALE AGGIORNATA DA SCREENSHOT -->
+        <div class="footer-grid">
+            <div class="footer-grid-item">
+                <strong>Direzione Nazionale & Hub:</strong>
+                Campania – Milano[span_8](start_span)[span_8](end_span)
+            </div>
+            <div class="footer-grid-item">
+                <strong>Segreteria Territoriale:</strong>
+                SALERNO <span style="color: var(--neon-cyan); font-weight: bold;">(Attiva per la Delibera Popolare)</span>[span_9](start_span)[span_9](end_span)
+            </div>
+            <div class="footer-grid-item">
+                <strong>Sede Legale:</strong>
+                Via E. Turco 26, Avellino[span_10](start_span)[span_10](end_span)
+            </div>
+            <div class="footer-grid-item">
+                <strong>Dati Fiscali:</strong>
+                P.Iva: 03223840645<br>C.F.: 92119520640[span_11](start_span)[span_11](end_span)
+            </div>
+            <div class="footer-grid-item">
+                <strong>PEC Ufficiale:</strong>
+                <a href="mailto:goevents.aps@pec.it" style="color: var(--accent-gold); text-decoration: none;">goevents.aps@pec.it</a>[span_12](start_span)[span_12](end_span)
+            </div>
+        </div>
+
+        <p style="text-align: center; font-size: 13px; color: #555; margin-top: 40px; border-top: 1px solid #1a1a1a; padding-top: 15px;">
+            © 2026 GLOBAL TREND FORUM® & GLOBAL TENDENCE FESTIVAL® - carlo riccio. Tutti i diritti riservati.
+        </p>
+    </footer>
+
+</div>
+</body>
+</html>
