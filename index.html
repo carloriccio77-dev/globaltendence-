@@ -285,8 +285,7 @@
     <p style="color: var(--neon-cyan);"><em>(57% Raggiunto | 1.287 Sostenitori | 142.5k Euro Raccolti | Target: €250.000 / mese)</em></p>
 
     <!-- SEZIONE DELIBERA E MANIFESTO -->
-  
-   <div style="background: var(--card-bg); border: 2px solid var(--neon-cyan); padding: 35px; margin-bottom: 40px; border-radius: 12px; box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);">
+    <div style="background: var(--card-bg); border: 2px solid var(--neon-cyan); padding: 35px; margin-bottom: 40px; border-radius: 12px; box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);">
     <h2 style="margin-top:0; border-left: 4px solid var(--neon-green); padding-left: 15px; font-size: 30px; color: #FFF;">RIPRENDITI IL TUO TEMPO: FIRMA E ADERISCI AL MOVIMENTO</h2>
     <p style="color:#A1A1AA; font-size:16px; margin-bottom: 25px;">Lascia il tuo segno per cambiare le regole. Il tuo voto ha un peso politico fondamentale.</p>
     
@@ -315,19 +314,19 @@
     const formDelibera = document.getElementById('form-delibera');
     const submitBtnDelibera = document.getElementById('submit-btn');
 
-    formDelibera.addEventListener('submit', e => {
+    formDelibera.addEventListener('submit', function(e) {
         e.preventDefault();
         submitBtnDelibera.disabled = true;
         submitBtnDelibera.innerText = "Registrazione firma...";
-       fetch('https://formspree.io/f/xvggpzel', {
-    method: 'POST',
-    headers: { 'Accept': 'application/json' },
-    body: new FormData(formDelibera)
-})
- 
-        
+
+        const formData = new FormData(formDelibera);
+
+        fetch('https://formspree.io/f/xvggpzel', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: formData
         })
-        .then(() => {
+        .then(function() {
             alert("Firma registrata con successo! Grazie per il tuo sostegno alla Delibera Popolare Etica. Ora verrai reindirizzato alla sezione donazione, dove potrai sostenere 'liberamente' le attività della GO EVENTS APS per lo sviluppo di una community critica e consapevole Indipendente da condizionamenti di parte.");
             
             const sezioneSostieni = document.getElementById('sostieni') || document.querySelector('h4');
@@ -339,7 +338,7 @@
             submitBtnDelibera.disabled = false;
             submitBtnDelibera.innerText = "Invia Firma e Aderisci";
         })
-        .catch(error => {
+        .catch(function(error) {
             console.error('Errore:', error);
             alert("Si è verificato un problema. Riprova.");
             submitBtnDelibera.disabled = false;
@@ -347,8 +346,8 @@
         });
     });
 </script>
- 
-            FIRMA E PARTECIPA AL FORUM
+    
+            FIRMA E PARTECIPA AL FORUM 
         </button>
     </form>
 </div>
