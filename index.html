@@ -330,8 +330,9 @@
         .then(function() {
             alert("Firma registrata con successo! Grazie per il tuo sostegno alla Delibera Popolare Etica. Ora verrai reindirizzato alla sezione donazione, dove potrai sostenere 'liberamente' le attività della GO EVENTS APS per lo sviluppo di una community critica e consapevole Indipendente da condizionamenti di parte.");
             
-            const sezioneSostieni = document.getElementById('sostieni') || document.querySelector('h4');
-            if(sezioneSostieni) {
+         const sezioneSostieni = document.querySelector('.reward-vertical-stack') || document.querySelector('h4');
+   
+          if(sezioneSostieni) {
                 sezioneSostieni.scrollIntoView({ behavior: 'smooth' });
             }
             
