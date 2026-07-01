@@ -304,5 +304,119 @@
                 <option value="Estero">🌍 International / Abroad (International Endorsement)</option>
             </select>
             
-            <label style="font-weight:bold; color: #FFF;">Specific City or Foreign Country:</label>
-            <input type="text" name
+                       <label style="font-weight:bold; color: #FFF;">Specific City or Foreign Country:</label>
+            <input type="text" name="ComuneStato" required style="padding: 12px; background: #16161A; border: 1px solid #27272A; color: #FFF; border-radius: 6px;">
+            
+            <button type="submit" id="submit-btn" style="background: var(--neon-green); color: #000; border: none; padding: 16px; font-weight: bold; font-size: 18px; border-radius: 8px; cursor: pointer; margin-top: 15px; text-transform: uppercase; letter-spacing: 1px;">Submit & Join</button>
+        </form>
+    </div>
+
+    <!-- REWARDS AREA (CROWDFUNDING) -->
+    <div class="reward-vertical-stack">
+        <div class="reward-rectangle featured">
+            <div class="reward-price">€5</div>
+            <p><strong>SUPPORTER:</strong> Digital Certificate of Ethical Custodian + Official inclusion in the global registry of Citizens of the World for Authenticity.</p>
+            <button class="btn-paypal">Donate €5 via PayPal</button>
+        </div>
+
+        <div class="reward-rectangle">
+            <div class="reward-price">€20</div>
+            <p><strong>PATRON:</strong> All previous benefits + Digital "Active Supporter" Badge + Special mention in the website's Contributors section.</p>
+            <button class="btn-paypal">Donate €20 via PayPal</button>
+        </div>
+
+        <div class="reward-rectangle">
+            <div class="reward-price">€50</div>
+            <p><strong>AVANT-GARDE GUARDIAN:</strong> Elite Territorial Positioning. Issuance of the Ethical Avant-Garde Member Digital Badge + Priority inclusion in the validation committee for the Popular Resolution for Ethical AI in Salerno. Includes absolute priority rights for future physical pass reservations for the Ecosystem.</p>
+            <button class="btn-paypal">Donate €50 via PayPal</button>
+        </div>
+
+        <div class="reward-rectangle isolated-gold">
+            <div class="reward-price">€500</div>
+            <p><strong>INTERNATIONAL FOUNDING CERTIFICATE:</strong> High-Fidelity Ethical Positioning. Issuance of the Numbered and Registered Diploma of Honor as an "International Supporter of Type 1 Civilization". The name will be permanently inscribed in the Registry of Founders of the Ethical Ecosystem to safeguard global transparency. Absolute priority access to the Forum's future institutional relations.</p>
+            <button class="btn-gold">Donate €500 via PayPal</button>
+        </div>
+
+        <!-- MACRO FUND 50k -->
+        <div class="macro-fund">
+            <div class="reward-price" style="color: var(--accent-gold);">€50.000</div>
+            <p style="font-size: 20px; color: #FFF; margin-bottom: 15px;"><strong>ANGEL VISIONARY / MAJOR BENEFACTOR:</strong> Strategic anchoring within the industrial framework. Co-ownership of the development panels for City 01, City 02, and City 03, reserved private governance briefings, and global recognition as an institutional pillar of the Type 1 Civilization transition.</p>
+            <a href="mailto:goevents.aps@pec.it" class="btn-gold" style="text-decoration: none; display: inline-block; text-align: center;">Contact via Email for Strategic Funding</a>
+        </div>
+
+        <!-- INSTITUTIONAL MODULES -->
+        <div class="reward-rectangle" style="border: 1px solid #333;">
+            <h3 style="color: #FFF; margin-top: 0;">ENTERPRISES, INSTITUTIONS & PATRONS</h3>
+            <p>"Dedicated to corporate entities, foundations, and enlightened investors who choose to associate their name with the greatest ethical transition of the century. It finances the deployment of technological and experiential districts on the ground and international algorethics protocols."</p>
+            <a href="mailto:goevents.aps@pec.it" class="btn-paypal" style="text-decoration: none; display: inline-block; text-align: center; background: #222; color: #FFF; border: 1px solid #444;">Inquire for Funding</a>
+        </div>
+
+        <div class="reward-rectangle" style="border: 1px solid #333;">
+            <h3 style="color: var(--neon-cyan); margin-top: 0;">BECOME AN INSTITUTIONAL PARTNER</h3>
+            <p>“Those who finance the Global Trend Forum® are not defending themselves from the future: they are reclaiming the right to guide it with the strength of their own authenticity.”</p>
+            <p style="margin-top: 10px; font-size: 14px; color: #A1A1AA;"><strong>Strategic Direction:</strong> Conceived and coordinated by the Founder of the global Ecosystem framework. A strategic direction born to guide the transition between technology and ethical humanism, coordinating territorial districts and international governance tables, ensuring the continuity and development of the code.</p>
+            <a href="mailto:goevents.aps@pec.it" class="btn-paypal" style="text-decoration: none; display: inline-block; text-align: center; background: #222; color: #FFF; border: 1px solid #444;">Contact Strategic Office</a>
+        </div>
+    </div>
+
+    <!-- LEGAL & FOOTER AREA -->
+    <footer style="margin-top: 40px; border-top: 1px solid #27272A; padding-top: 30px;">
+        
+        <div style="font-size: 14px; color: #A1A1AA; line-height: 1.6; margin-bottom: 25px;">
+            <p style="margin-bottom: 15px;">Every contribution is a free donation supporting the scientific and cultural independence of the Global Trend Forum®. Acknowledgments, certificates, and elite access rights granted to supporters remain linked to the development of the framework and will be guaranteed for the first official manifestation of the Ecosystem, wherever and whenever it takes place on the ground.</p>
+            
+            <p style="margin-bottom: 15px;"><strong>The Official Matrix:</strong> Global Trend Forum® (Conceptual Framework & International Tables) & GLOBAL TENDENCE FESTIVAL® (Deployment Ecosystem) — Human-Centric — Strategic Direction: Carlo Riccio — GO Events APS — International Cultural Association for Territorial Promotion and Value Creation.</p>
+            
+            <p style="margin-bottom: 15px;"><strong>Transparency of Funds:</strong> Every inflow and outflow of the Start Funding and free donations is publicly reported. Funds are strictly restricted to the development of the framework and the international relations of the ecosystem.</p>
+            
+            <p style="margin-bottom: 20px;"><strong>Legal Declaration:</strong> Intellectual paternity, conception, and the conceptual framework of the format belong entirely to the Founder and President Carlo Riccio as a natural person. GO Events APS is the non-profit organization for territorial alignment that preserves its ethical matrix. Any unauthorized use, replication, or filing, even partial, of the brand, conceptual framework, interaction methodology, and correlated project dynamics is legally punishable, as the work is protected internationally by copyright in all competent institutional and jurisdictional venues.</p>
+        </div>
+
+        <!-- Corporate Info Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; border-top: 1px solid #222; padding-top: 20px; font-size: 13px; color: #71717A;">
+            <div><strong>National Direction & Hub:</strong><br>Campania – Milano</div>
+            <div><strong>Territorial Secretariat:</strong><br>SALERNO (Active for the Popular Resolution)</div>
+            <div><strong>Registered Office:</strong><br>Via E. Turco 26, Avellino</div>
+            <div><strong>Fiscal Data:</strong><br>VAT: 03223840645<br>C.F.: 92119520640</div>
+            <div><strong>Official PEC:</strong><br><a href="mailto:goevents.aps@pec.it" style="color: var(--neon-cyan); text-decoration: none;">goevents.aps@pec.it</a></div>
+        </div>
+
+        <p style="margin-top: 30px; font-size: 13px; color: #52525B; text-align: center;">
+            &copy; 2026 GLOBAL TREND FORUM® & GLOBAL TENDENCE FESTIVAL® - Carlo Riccio. All rights reserved.
+        </p>
+    </footer>
+
+</div>
+
+<script>
+document.getElementById('form-delibera-actual').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    var formData = new FormData(this);
+    var object = {};
+    formData.forEach(function(value, key){
+        object[key] = value;
+    });
+    
+    fetch('https://formspree.io/f/xvggpzel', {
+        method: 'POST',
+        body: JSON.stringify(object),
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    }).then(function() {
+        alert("Signature registered successfully!\n\nThank you for supporting the Ethical Popular Resolution. You will now be redirected to the donation section.");
+        const sezioneSostieni = document.querySelector('.reward-vertical-stack') || document.querySelector('h4');
+        if(sezioneSostieni) {
+            sezioneSostieni.scrollIntoView({ behavior: 'smooth' });
+        }
+    }).catch(function(error) {
+        alert("An error occurred. Please try again.");
+    });
+});
+</script>
+
+</body>
+</html>
+ 
